@@ -35,7 +35,7 @@ const App = () => {
 export default App;
 
 //const Root = () => {}
-    
+
 const Root = () => {
  const isAuthenticated =   !!localStorage.getItem("token");
 
