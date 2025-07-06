@@ -2,9 +2,9 @@ import React from 'react'
 import {
     BrowserRouter as Router,
     Routes,
-    Route, 
-    Navigate,
-} from "react-router-dom";
+    Route,
+    Navigate, 
+   } from "react-router-dom";
 
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
@@ -16,10 +16,9 @@ import Expense from "./pages/Dashboard/Expense";
 const App = () => {
   return (
    <div>
- 
-    <Router>
-    <Routes>
-       
+  
+    <Router> 
+    <Routes>    
 <Route path="/" element={<Root />} />
 <Route path="/login" element={<Login />} />
 <Route path="/signup" element={<Signup />} />
@@ -28,8 +27,22 @@ const App = () => {
 <Route path="/expense" element={<Expense />} />
     </Routes>
     </Router>
+ 
    </div>
   )
 }
 
-export default App
+export default App;
+
+//const Root = () => {}
+    
+const Root = () => {
+ const isAuthenticated =   !!localStorage.getItem("token");
+
+ return isAuthenticated ? (
+<Navigate to="/dashboard" />
+ ) : (
+<Navigate to="/login" />
+
+ );
+};
