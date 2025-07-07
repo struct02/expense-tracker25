@@ -1,13 +1,18 @@
 import React from 'react';
-import Header from './loginsections/header';
-import Footer from './loginsections/footer';
+
 
 const Login = () => {
   return (
     <>
-    <Header/>
+  
     <div>Login</div>
-    <Footer/>
+    <div class="grid grid-cols-4 gap-4">
+  <div>01</div>
+    <div>02</div>
+      <div>02</div>
+        <div>02</div>
+</div>
+  
     </>
   )
 }
